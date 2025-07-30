@@ -1,0 +1,88 @@
+---
+
+---
+
+<section class="pricing">
+    <div class="container">
+        <h2 class="pricing__title">Pricing</h2>
+        <p class="pricing__description">
+            We offer a variety of detailing services to fit your needs. Prices vary depending on the size and condition of your vehicle.
+        </p>
+        <div class="pricing__cards">
+            <div class="pricing__card">
+                <h3 class="pricing__card-title">Interior Detailing</h3>
+                <p class="pricing__card-price">Starting at $80</p>
+                <p class="pricing__card-description">
+                    Interior detailing is a comprehensive cleaning and maintenance service for your vehicle's interior. This includes vacuuming, shampooing carpets, cleaning cup holders, and more.
+                </p>
+            </div>
+            <div class="pricing__card">
+                <h3 class="pricing__card-title">Exterior Detailing</h3>
+                <p class="pricing__card-price">Starting at $80</p>
+                <p class="pricing__card-description">
+                    Exterior detailing is a comprehensive cleaning and maintenance service for your vehicle's exterior. This includes washing, waxing, and polishing the exterior of your vehicle.
+                </p>
+            </div>
+            <div class="pricing__card">
+                <h3 class="pricing__card-title">Full Detailing</h3>
+                <p class="pricing__card-price">Starting at $120</p>
+                <p class="pricing__card-description">
+                    Full detailing is a comprehensive cleaning and maintenance service for your vehicle's interior and exterior. This includes vacuuming, shampooing carpets, cleaning cup holders, and more.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .pricing {
+        margin-top: 128px;
+        margin-bottom: 128px;
+    }
+    .pricing__title {
+        font-size: 48px;
+        font-weight: 700;
+        margin:0;
+        color: #ffffff;
+    }
+    .pricing__description {
+        font-size: 16px;
+        line-height: 1.5;
+        color: #666666;
+        margin-bottom: 32px;
+    }
+    .pricing__cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+    }
+    .pricing__card {
+        background-color: #111111;  
+        padding: 48px;
+        border-radius: 16px;
+        color: #ffffff;
+        border: 1px solid #222222;
+    }
+    .pricing__card-title {
+        font-size: 24px;
+        font-weight: 700;
+        margin-bottom: 16px;
+        line-height: 1.2;
+    }
+    .pricing__card-price {
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: 16px;
+        line-height: 1.2;
+        color: #666666;
+    }
+    .pricing__card-description {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+    @media (max-width: 1024px) {
+        .pricing__cards {
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+</style>    

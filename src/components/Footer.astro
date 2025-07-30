@@ -1,0 +1,288 @@
+---
+import logo from '../assets/AspireLogo.png'
+---
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer__content">
+            <!-- Company Information -->
+            <div class="footer__section">
+                <div class="footer__logo">
+                    <img src={logo.src} alt="Aspire Detailing Logo" class="footer__logo-image" width={150} />
+                </div>
+                <p class="footer__description">
+                    Professional auto detailing services that bring your vehicle back to showroom condition. 
+                    Quality, attention to detail, and customer satisfaction guaranteed.
+                </p>
+                <div class="footer__contact-info">
+                    <div class="contact-item">
+                        <span class="contact-icon">📞</span>
+                        <span>(555) 123-4567</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">📧</span>
+                        <span>info@aspiredetailing.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">📍</span>
+                        <span>Tulsa, OK</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Services -->
+            <div class="footer__section">
+                <h3 class="footer__section-title">Our Services</h3>
+                <ul class="footer__links">
+                    <li><a href="#exterior-detailing" class="footer__link">Exterior Detailing</a></li>
+                    <li><a href="#interior-detailing" class="footer__link">Interior Detailing</a></li>
+                    <li><a href="#full-detail" class="footer__link">Full Detail Service</a></li>
+                    <li><a href="#ceramic-coating" class="footer__link">Ceramic Coating</a></li>
+                    <li><a href="#paint-correction" class="footer__link">Paint Correction</a></li>
+                    <li><a href="#maintenance-wash" class="footer__link">Maintenance Wash</a></li>
+                </ul>
+            </div>
+
+
+
+            <!-- Social Media & Hours -->
+            <div class="footer__section">
+                <h3 class="footer__section-title">Connect With Us</h3>
+                <div class="footer__social">
+                    <a href="https://facebook.com/aspiredetailing" class="social-link" aria-label="Facebook">
+                        <span class="social-icon">👤</span>
+                    </a>
+                    <a href="https://instagram.com/aspiredetailing" class="social-link" aria-label="Instagram">
+                        <span class="social-icon">📷</span>
+                    </a>
+                    <a href="https://twitter.com/aspiredetailing" class="social-link" aria-label="Twitter">
+                        <span class="social-icon">🐦</span>
+                    </a>
+                    <a href="https://youtube.com/aspiredetailing" class="social-link" aria-label="YouTube">
+                        <span class="social-icon">📺</span>
+                    </a>
+                </div>
+                
+                <div class="footer__hours">
+                    <h4 class="hours-title">Business Hours</h4>
+                    <div class="hours-item">
+                        <span>Monday - Friday:</span>
+                        <span>8:00 AM - 6:00 PM</span>
+                    </div>
+                    <div class="hours-item">
+                        <span>Saturday:</span>
+                        <span>9:00 AM - 5:00 PM</span>
+                    </div>
+                    <div class="hours-item">
+                        <span>Sunday:</span>
+                        <span>Closed</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Section -->
+        <div class="footer__bottom">
+            <div class="footer__copyright">
+                <p>&copy; 2025 Aspire Detailing. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<style>
+    .footer {
+        background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+        color: #ffffff;
+        padding: 3rem 0 1rem 0;
+        /* margin-top: 4rem; */
+        border-top: 1px solid #333;
+    }
+
+    .footer__content {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .footer__section {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .footer__logo-image {
+        /* filter: brightness(0) invert(1); */
+        mix-blend-mode: screen;
+        margin-bottom: 1rem;
+    }
+
+    .footer__description {
+        color: #cccccc;
+        line-height: 1.6;
+        margin-bottom: 1rem;
+    }
+
+    .footer__contact-info {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .contact-item {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: #cccccc;
+        font-size: 0.9rem;
+    }
+
+    .contact-icon {
+        font-size: 1.1rem;
+    }
+
+    .footer__section-title {
+        color: #ffffff;
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        border-bottom: 2px solid #4a90e2;
+        padding-bottom: 0.5rem;
+        display: inline-block;
+    }
+
+    .footer__links {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .footer__link {
+        color: #cccccc;
+        text-decoration: none;
+        transition: color 0.3s ease, transform 0.2s ease;
+        display: inline-block;
+    }
+
+    .footer__link:hover {
+        color: #4a90e2;
+        transform: translateX(5px);
+    }
+
+    .footer__social {
+        display: flex;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .social-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background: #333;
+        border-radius: 50%;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+
+    .social-link:hover {
+        background: #4a90e2;
+        transform: translateY(-2px);
+    }
+
+    .social-icon {
+        font-size: 1.2rem;
+    }
+
+    .footer__hours {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .hours-title {
+        color: #ffffff;
+        font-size: 1rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+    }
+
+    .hours-item {
+        display: flex;
+        justify-content: space-between;
+        color: #cccccc;
+        font-size: 0.9rem;
+    }
+
+    .footer__bottom {
+        border-top: 1px solid #333;
+        padding-top: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer__copyright {
+        color: #999;
+        font-size: 0.9rem;
+    }
+
+    /* Responsive Design */
+    @media (min-width: 768px) {
+        .footer__content {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .footer__content {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .footer__bottom {
+            flex-direction: row;
+            justify-content: center;
+            text-align: center;
+        }
+    }
+
+    @media (min-width: 1280px) {
+        .footer {
+            padding: 4rem 0 2rem 0;
+        }
+    }
+
+    /* Accessibility improvements */
+    .footer__link:focus,
+    .social-link:focus {
+        outline: 2px solid #4a90e2;
+        outline-offset: 2px;
+    }
+
+    /* Print styles */
+    @media print {
+        .footer {
+            background: #ffffff !important;
+            color: #000000 !important;
+            border-top: 1px solid #000000 !important;
+        }
+
+        .footer__link {
+            color: #000000 !important;
+        }
+
+        .social-link {
+            display: none !important;
+        }
+    }
+</style>
