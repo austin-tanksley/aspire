@@ -1,0 +1,51 @@
+<!-- This file is used by Netlify to detect the form structure during build -->
+<form name="quote-form" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+  <input type="hidden" name="form-name" value="quote-form" />
+  <p class="hidden">
+    <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+  </p>
+  <p>
+    <label>Full Name: <input type="text" name="name" /></label>
+  </p>
+  <p>
+    <label>Phone Number: <input type="tel" name="phone" /></label>
+  </p>
+  <p>
+    <label>Email Address: <input type="email" name="email" /></label>
+  </p>
+  <p>
+    <label>Service Type: <select name="service_type">
+      <option value="exterior">Exterior Detailing</option>
+      <option value="interior">Interior Detailing</option>
+      <option value="full">Full Detail</option>
+      <option value="maintenance">Maintenance Wash</option>
+    </select></label>
+  </p>
+  <p>
+    <label>Vehicle Information: <input type="text" name="vehicle_info" /></label>
+  </p>
+  <p>
+    <label>Street Address: <input type="text" name="street" /></label>
+  </p>
+  <p>
+    <label>City: <input type="text" name="city" /></label>
+  </p>
+  <p>
+    <label>State: <input type="text" name="state" /></label>
+  </p>
+  <p>
+    <label>ZIP Code: <input type="text" name="zipcode" /></label>
+  </p>
+  <p>
+    <label>Special Requests: <textarea name="message"></textarea></label>
+  </p>
+  <p>
+    <button type="submit">Send</button>
+  </p>
+</form>
+
+<style>
+  .hidden {
+    display: none;
+  }
+</style> 

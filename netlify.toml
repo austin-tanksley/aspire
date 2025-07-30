@@ -1,0 +1,25 @@
+[build]
+  publish = "dist"
+  command = "npm run build"
+
+[build.environment]
+  NODE_VERSION = "18"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Form handling
+[[redirects]]
+  from = "/"
+  to = "/"
+  status = 200
+  conditions = {Role = ["admin"]}
+
+# Handle form submissions
+[[redirects]]
+  from = "/"
+  to = "/success"
+  status = 302
+  conditions = {Form = ["quote-form"]} 

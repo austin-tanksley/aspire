@@ -5,7 +5,11 @@
         <h2 class="quote-form__title">Get a Quote</h2>
         <p class="quote-form__subtitle">Fill out the form below and we'll get back to you with a personalized quote</p>
         
-        <form class="quote-form__form" name="quote-form">
+        <form class="quote-form__form" name="quote-form" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+            <input type="hidden" name="form-name" value="quote-form" />
+            <p class="hidden">
+                <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+            </p>
             <!-- Personal Information -->
             <div class="quote-form__section">
                 <h3 class="quote-form__section-title">
@@ -534,6 +538,11 @@
         outline-offset: 2px;
     }
 
+    /* Honeypot field */
+    .hidden {
+        display: none;
+    }
+
     /* Loading state */
     .quote-form__button.loading {
         pointer-events: none;
@@ -660,16 +669,33 @@
                 buttonText.textContent = 'Sending...';
             }
 
-            // Simulate form submission (replace with actual submission logic)
-            setTimeout(() => {
-                alert('Thank you! Your quote request has been submitted. We\'ll get back to you soon.');
-                form.reset();
+            // Submit form to Netlify
+            const formData = new FormData(form);
+            
+            fetch('/', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: new URLSearchParams(formData as any).toString()
+            })
+            .then(response => {
+                if (response.ok) {
+                    // Redirect to success page
+                    window.location.href = '/success';
+                } else {
+                    throw new Error('Form submission failed');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Sorry, there was an error submitting your form. Please try again.');
+            })
+            .finally(() => {
                 submitButton.classList.remove('loading');
                 submitButton.disabled = false;
                 if (buttonText) {
                     buttonText.textContent = 'Get My Quote';
                 }
-            }, 2000);
+            });
         }
     });
 </script>
