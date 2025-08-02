@@ -1,6 +1,6 @@
 ---
 ---
-<section class="quote-form">
+<section class="quote-form" quote-form>
     <div class="container">
         <h2 class="quote-form__title">Get a Quote</h2>
         <p class="quote-form__subtitle">Fill out the form below and we'll get back to you with a personalized quote</p>
@@ -558,11 +558,11 @@
     }
 </style>
 
-<script>
+<script is:inline>
     // Form validation and enhancement
     document.addEventListener('DOMContentLoaded', function() {
-        const form = document.querySelector('.quote-form__form') as HTMLFormElement;
-        const submitButton = document.querySelector('.quote-form__button') as HTMLButtonElement;
+        const form = document.querySelector('.quote-form__form');
+        const submitButton = document.querySelector('.quote-form__button');
         
         if (!form || !submitButton) return;
 
@@ -576,8 +576,8 @@
         // Form submission
         form.addEventListener('submit', handleSubmit);
 
-        function validateField(e: Event) {
-            const field = e.target as HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement;
+        function validateField(e) {
+            const field = e.target;
             const errorElement = document.getElementById(field.id + '-error');
             
             if (!errorElement) return true;
@@ -631,8 +631,8 @@
             return isValid;
         }
 
-        function clearError(e: Event) {
-            const field = e.target as HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement;
+        function clearError(e) {
+            const field = e.target;
             const errorElement = document.getElementById(field.id + '-error');
             if (errorElement) {
                 errorElement.textContent = '';
@@ -640,13 +640,13 @@
             }
         }
 
-        function handleSubmit(e: Event) {
+        function handleSubmit(e) {
             e.preventDefault();
             
             // Validate all fields
             let isValid = true;
             inputs.forEach(input => {
-                const mockEvent = { target: input } as unknown as Event;
+                const mockEvent = { target: input };
                 if (!validateField(mockEvent)) {
                     isValid = false;
                 }
@@ -654,7 +654,7 @@
 
             if (!isValid) {
                 // Focus on first error
-                const firstError = form.querySelector('.error') as HTMLElement;
+                const firstError = form.querySelector('.error');
                 if (firstError) {
                     firstError.focus();
                 }
@@ -664,7 +664,7 @@
             // Show loading state
             submitButton.classList.add('loading');
             submitButton.disabled = true;
-            const buttonText = submitButton.querySelector('.quote-form__button-text') as HTMLElement;
+            const buttonText = submitButton.querySelector('.quote-form__button-text');
             if (buttonText) {
                 buttonText.textContent = 'Sending...';
             }
@@ -675,7 +675,7 @@
             fetch('/', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                body: new URLSearchParams(formData as any).toString()
+                body: new URLSearchParams(formData).toString()
             })
             .then(response => {
                 if (response.ok) {

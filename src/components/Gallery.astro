@@ -28,18 +28,18 @@ const galleryImages = await Astro.glob('../assets/gallery_images/*.jpg');
     <img class="modal-content" id="modalImage">
 </div>
 
-<script>
+<script is:inline>
     document.addEventListener('DOMContentLoaded', function() {
-        const modal = document.getElementById("imageModal") as HTMLElement;
-        const modalImg = document.getElementById("modalImage") as HTMLImageElement;
-        const closeBtn = document.querySelector('.close') as HTMLElement;
+        const modal = document.getElementById("imageModal");
+        const modalImg = document.getElementById("modalImage");
+        const closeBtn = document.querySelector('.close');
         const imageContainers = document.querySelectorAll('.gallery__image-container');
         
         // Add click event listeners to all image containers
         imageContainers.forEach((container) => {
-            container.addEventListener('click', function(this: HTMLElement) {
+            container.addEventListener('click', function() {
                 const index = parseInt(this.getAttribute('data-image-index') || '0');
-                const img = this.querySelector('.gallery__image') as HTMLImageElement;
+                const img = this.querySelector('.gallery__image');
                 if (modal && modalImg && img) {
                     modal.style.display = "flex";
                     modalImg.src = img.src;

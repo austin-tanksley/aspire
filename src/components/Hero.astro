@@ -1,5 +1,7 @@
 ---
 import heroImage from '../assets/hero-image.jpg'
+
+
 ---
 <section class="hero" style={`background-image: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)), url(${heroImage.src}); background-size: cover; background-position: center;`}>
     <div class="container">
@@ -12,7 +14,7 @@ import heroImage from '../assets/hero-image.jpg'
                     Get a Fast and Easy Quote, or Give Us a Call.
                 </p>
                 <div class="hero__buttons">
-                    <button class="hero__button">
+                    <button class="hero__button" get-quote-btn>
                         Get a Quote
                     </button>
                     <button class="hero__button">
@@ -101,3 +103,19 @@ import heroImage from '../assets/hero-image.jpg'
         } */
     }
 </style>
+
+<script is:inline>
+    const quoteBtn = document.querySelector('[get-quote-btn]');
+    if (quoteBtn) {
+        quoteBtn.addEventListener('click', function() {
+            console.log('Quote button clicked!');
+            const quoteForm = document.querySelector('[quote-form]');
+            quoteForm.scrollIntoView({ 
+                behavior: 'smooth',
+                block: 'start'
+            });
+        });
+    }
+</script>
+
+
